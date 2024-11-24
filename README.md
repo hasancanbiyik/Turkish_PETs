@@ -58,26 +58,25 @@ source venv/bin/activate
 
 ### Step 3: Install dependencies
 ```bash
-pip install -r experiment/requirements.txt
+pip install -r experiment/EXPERIMENT_RUNNER/requirements.txt
 ```
 
-### Step 4: Run the experiment
+### Step 4: Enable permissions to execute the script.
 
-Navigate to the experiment folder and execute the training or evaluation scripts.
+```bash
+chmod +x local/run.sh
+```
 
-Training a Model
+### Step 5: Run the experiment
 
-Run the run.sh script or use train.py to train the model on one of the splits:
+Run the run.sh script
 
 ```bash
 # Execute the shell script for a predefined experiment
 bash local/run.sh
-
-# Alternatively, run train.py directly
-python3 src/train.py --split_path splits/fold_0/train.csv --model_name xlmr
 ```
 
-### Step 5: Evaluating the model
+### Step 6: Evaluating the model
 Run the launch.py script to evaluate the fine-tuned model:
 
 ```bash
