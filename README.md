@@ -21,14 +21,14 @@ This dataset includes 6,115 labeled examples, covering both euphemistic and non-
 - Includes 64 PETs categorized into 10 categories (e.g., death, employment, politics).
 
 **Columns:**
-- **num:** ID, the number of example
-- **PET:** Potentially Euphemistic Term.
-- **variation:** The morphological variation of the PET.
-- **category:** Category of the PET.
-- **orig_text, clean_text:** Original and lowercased text.
-- **char_count, word_count:** Character and word counts.
-- **edited_text:** Text with [PET_BOUNDARY] markers for PETs.
-- **label:** Binary annotation (1 = euphemistic, 0 = non-euphemistic)
+- `num:` ID, the number of example
+- `PET:` Potentially Euphemistic Term.
+- `variation:` The morphological variation of the PET.
+- `category:` Category of the PET.
+- `orig_text, clean_text:` Original and lowercased text.
+- `char_count, word_count:` Character and word counts.
+- `edited_text:` Text with [PET_BOUNDARY] markers for PETs.
+- `label:` Binary annotation (1 = euphemistic, 0 = non-euphemistic)
 
 2. **`turkish_pets_balanced_dataset.csv`**
 - **Size**: 908 examples (521 euphemistic, 387 non-euphemistic).
@@ -76,13 +76,6 @@ Run the run.sh script
 bash local/run.sh
 ```
 
-### Step 6: Evaluating the model
-Run the launch.py script to evaluate the fine-tuned model:
-
-```bash
-python3 src/launch.py --split_path splits/fold_0/test.csv --model_path experiment_xlmr/saved_models/model_checkpoint.bin
-```
-
 ## Cross-Validation Splits
 The splits/ folder contains **20 folds** of cross-validation splits for fine-tuning and evaluating models.
 
@@ -105,4 +98,3 @@ For questions or suggestions, feel free to reach out:
 Research Assistant, Montclair State University
 
 [Email](biyikh1@montclair.edu) / biyikh1@montclair.edu
-
