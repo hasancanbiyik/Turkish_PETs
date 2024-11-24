@@ -1,6 +1,6 @@
 # Turkish Delights: A Dataset on Turkish Euphemisms
 Euphemisms are a form of figurative language often used to soften sensitive topics or avoid direct language. 
-Despite their importance in communication, they remain relatively understudied in natural language processing (NLP). 
+Despite their importance in communication, they remain relatively understudied in NLP. 
 This repository introduces the Turkish Potentially Euphemistic Terms (PETs) Dataset, the first publicly available resource of its kind in the field.
 
 This repository contains the following:
