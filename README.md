@@ -1,30 +1,109 @@
 # Turkish Delights: A Dataset on Turkish Euphemisms
+Euphemisms are a form of figurative language often used to soften sensitive topics or avoid direct language. 
+Despite their importance in communication, they remain relatively understudied in natural language processing (NLP). 
+This repository introduces the Turkish Potentially Euphemistic Terms (PETs) Dataset, the first publicly available resource of its kind in the field.
 
-This repository contains files accompanying the SIGTURK 2024 paper, Turkish Delights: A Dataset on Turkish Euphemisms, presented at SIGTURK 2024 (co-located with ACL 2024). The dataset is designed to support research on euphemistic language use in Turkish, with a focus on understanding and identifying euphemistic expressions across contexts.
+This repository contains the following:
+
+- Creating a curated list of 64 euphemistic terms (PETs) commonly used in Turkish.
+- Collecting contextual examples from real-world sources.
+- Annotating these examples to distinguish euphemistic and non-euphemistic uses of PETs.
 
 ## Overview
+Euphemisms are often used to soften sensitive topics or avoid harsh language. This project focuses on 64 Potentially Euphemistic Terms (PETs) in Turkish, providing valuable resources for tasks like euphemism detection and cross-linguistic analysis.
 
-Euphemisms are often used to soften sensitive topics or avoid harsh language. This dataset focuses on Turkish euphemisms, providing a valuable resource for research in Natural Language Processing (NLP), Computational Linguistics, and Cultural Studies.
+This dataset includes 6,115 labeled examples, covering both euphemistic and non-euphemistic instances. The dataset focuses on 64 Potentially Euphemistic Terms (PETs) across various domains of sensitive language. Each instance is labeled and annotated with [PET_BOUNDARY] markers for easy identification of euphemistic phrases.
 
-### Key Features:
-Balanced Dataset: Contains 908 examples labeled as euphemistic or non-euphemistic.
-Marked Expressions: Includes [PET_BOUNDARY] tags to highlight euphemistic phrases in context.
-Multilingual Potential: Can be extended to comparative studies across languages.
+## Repository Contents
+### Datasets
+1. **`turkish_pets_full_dataset.csv`**
+- Contains 6,115 labeled examples of euphemistic and non-euphemistic instances.
+- Includes 64 PETs categorized into 10 categories (e.g., death, employment, politics).
 
-## Dataset Details
+**Columns:**
+- **num:** ID, the number of example
+- **PET:** Potentially Euphemistic Term.
+- **variation:** The morphological variation of the PET.
+- **category:** Category of the PET.
+- **orig_text, clean_text:** Original and lowercased text.
+- **char_count, word_count:** Character and word counts.
+- **edited_text:** Text with [PET_BOUNDARY] markers for PETs.
+- **label:** Binary annotation (1 = euphemistic, 0 = non-euphemistic)
 
-The repository includes the following files:
+2. **`turkish_pets_balanced_dataset.csv`**
+- **Size**: 908 examples (521 euphemistic, 387 non-euphemistic).
+- Simplified for classification tasks using transformer-based models.
 
-**1. turkish_pets_list.csv**
+3. **`Turkish_PETs_List.pdf`**
+- A supplementary resource listing additional euphemistic terms that were not represented in the datasets due to a lack of examples in the corpus.
 
-A list of Potentially Euphemistic Terms (PETs) gathered from various sources, including Turkish media, social networks, and literature.
-Columns: term, frequency, context
+## How to Use
 
-**2. tr_pets_balanced_dataset.csv**
+This section explains how to set up and run experiments using the Turkish Potentially Euphemistic Terms (PETs) dataset. Follow these steps to reproduce the results or adapt the setup for your own experiments.
 
-A dataset of 908 sentences labeled as euphemistic (1) or non-euphemistic (0). Each euphemistic expression is marked with [PET_BOUNDARY] tags for easier identification.
-Columns: text, label
+---
 
-**3. data_description.txt**
+### **Step 1: Clone the Repository**
+Clone this repository to your local machine:
+```bash
+git clone --branch experiment https://github.com/hasancanbiyik/Turkish_PETs.git
+cd Turkish_PETs
+```
 
-A file explaining the structure and purpose of the datasets.
+### Step 2: Create a virtual environment (optional)
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Step 3: Install dependencies
+```bash
+pip install -r experiment/requirements.txt
+```
+
+### Step 4: Run the experiment
+
+Navigate to the experiment folder and execute the training or evaluation scripts.
+
+Training a Model
+
+Run the run.sh script or use train.py to train the model on one of the splits:
+
+```bash
+# Execute the shell script for a predefined experiment
+bash local/run.sh
+
+# Alternatively, run train.py directly
+python3 src/train.py --split_path splits/fold_0/train.csv --model_name xlmr
+```
+
+### Step 5: Evaluating the model
+Run the launch.py script to evaluate the fine-tuned model:
+
+```bash
+python3 src/launch.py --split_path splits/fold_0/test.csv --model_path experiment_xlmr/saved_models/model_checkpoint.bin
+```
+
+## Cross-Validation Splits
+The splits/ folder contains **20 folds** of cross-validation splits for fine-tuning and evaluating models.
+
+## Fine-Tuned Models
+Fine-tuned models for **XLM-R**, **mBERT**, **BERTurk**, and **ELECTRA** will be hosted on **[Hugging Face](https://huggingface.co/hasancanbiyik/)**. 
+These models will allow researchers to benchmark their approaches without requiring additional fine-tuning.
+
+Stay tuned for updates!
+
+## Citation
+If you use this dataset or repository in your research, please cite our paper:
+
+- Hasan Biyik, Patrick Lee, and Anna Feldman. 2024. Turkish Delights: a Dataset on Turkish Euphemisms. In Proceedings of the First Workshop on Natural Language Processing for Turkic Languages (SIGTURK 2024), pages 71–80, Bangkok, Thailand and Online. Association for Computational Linguistics.
+
+## Contact
+For questions or suggestions, feel free to reach out:
+
+**Hasan Can Biyik** 
+
+Research Assistant, Montclair State University
+
+[Email](biyikh1@montclair.edu) / biyikh1@montclair.edu
+
