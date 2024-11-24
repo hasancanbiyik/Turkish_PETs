@@ -5,7 +5,7 @@ This repository introduces the Turkish Potentially Euphemistic Terms (PETs) Data
 
 This repository contains the following:
 
-- Creating a curated list of 64 euphemistic terms (PETs) commonly used in Turkish.
+- Creating a curated list of 64 PETs commonly used in Turkish.
 - Collecting contextual examples from real-world sources.
 - Annotating these examples to distinguish euphemistic and non-euphemistic uses of PETs.
 
