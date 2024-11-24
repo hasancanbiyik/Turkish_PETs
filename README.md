@@ -32,7 +32,7 @@ This dataset includes 6,115 labeled examples, covering both euphemistic and non-
 
 2. **`turkish_pets_balanced_dataset.csv`**
 - **Size**: 908 examples (521 euphemistic, 387 non-euphemistic).
-- Simplified for classification tasks using transformer-based models.
+- This is the balanced dataset used for the classification experiments mentioned in the 'Turkish Delights: A Dataset on Turkish Euphemisms' paper.
 
 3. **`Turkish_PETs_List.pdf`**
 - A supplementary resource listing additional euphemistic terms that were not represented in the datasets due to a lack of examples in the corpus.
