@@ -10,9 +10,7 @@ This repository contains the following:
 - Annotating these examples to distinguish euphemistic and non-euphemistic uses of PETs.
 
 ## Overview
-Euphemisms are often used to soften sensitive topics or avoid harsh language. This project focuses on 64 Potentially Euphemistic Terms (PETs) in Turkish, providing valuable resources for tasks like euphemism detection and cross-linguistic analysis.
-
-This dataset includes 6,115 labeled examples, covering both euphemistic and non-euphemistic instances. The dataset focuses on 64 Potentially Euphemistic Terms (PETs) across various domains of sensitive language. Each instance is labeled and annotated with [PET_BOUNDARY] markers for easy identification of euphemistic phrases.
+Euphemisms are often used to soften sensitive topics or avoid harsh language. This project focuses on 64 PETs in Turkish.
 
 ## Repository Contents
 ### Datasets
