@@ -37,7 +37,7 @@ Euphemisms are often used to soften sensitive topics or avoid harsh language. Th
 
 ## How to Use
 
-This section explains how to set up and run experiments using the Turkish Potentially Euphemistic Terms (PETs) dataset. Follow these steps to reproduce the results or adapt the setup for your own experiments.
+This section explains how to set up and run experiments using the Turkish PETs dataset. Follow these steps to reproduce the results or adapt the setup for your own experiments.
 
 ---
 
